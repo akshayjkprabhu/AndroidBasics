@@ -1,11 +1,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ajp.basicandroid">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".HomeActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+            <meta-data android:name="com.google.android.safetynet.ATTEST_API_KEY"
+                android:value="@string/safety_net_api_key"/>
+        </activity>
+        <activity android:name=".AnotherActivity"
+            android:launchMode="singleInstance"/>
+
+
+    </application>
+
+    <!--
+AIzaSyDZTSCGm4pnmF7mMrbH6AWnB9iyy5c46PE
+-->
 </manifest>
